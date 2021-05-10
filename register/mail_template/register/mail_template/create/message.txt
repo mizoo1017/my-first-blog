@@ -1,0 +1,8 @@
+Thank you for register your account.
+Your {{ user.email }} has been provisionally registered!
+Be careful, your account has not been successfully registered yet.
+
+URL for registration
+{{ protocol }}://{{ domain }}{% url 'register:user_create_complete' token %}
+
+Best regards.

@@ -1,0 +1,18 @@
+{% extends "register/base.html" %}
+{% block content %}
+<form action="" method="POST">
+  {{ form.non_field_errors }}
+  <!-- 特定のフィールドに関連付けられていないエラーを返す -->
+  <!-- cleanメソッドで発生したエラーが対象 -->
+  {% for field in form %}
+  <div class="form-group">
+      <label for="{{field.id_for_label}}">{{ field.label_tag }}</label>
+      <!-- 用途確認 -->
+      {{ field }}
+      {{ field.errors }}
+  </div>
+  {% endfor %}
+  {% csrf_token %}
+  <button type="submit" class="btn btn-primary btn-lg">送信</button>
+</form>
+{% endblock %}

@@ -1,0 +1,4 @@
+{{ user.username }} 様
+アクセスしてパスワード再設定して。
+
+{{ protocol}}://{{ domain }}{% url 'register:password_reset_confirm' uid token %}
